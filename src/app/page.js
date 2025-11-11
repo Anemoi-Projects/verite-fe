@@ -282,14 +282,14 @@ export default function Home() {
       >
         <h1 className="text-5xl text-center text-white">Industries We Serve</h1>
 
-        <div className="grid grid-cols-3 gap-5 gap-y-10 max-w-3/4 mx-auto mt-24">
+        <div className="grid grid-cols-3 gap-5 gap-y-10 w-full xl:max-w-4/5 mx-auto mt-24">
           {INDUSTRIES.map((ind, i) => (
             <Card
               key={i}
               className={"bg-[#2E2E2E]/50 flex-row pb-0 px-5 border-0"}
             >
               <Image src={ind.image} width={103} height={104} alt={ind.title} />
-              <h1 className="text-3xl text-white">{ind.title}</h1>
+              <h1 className="text-2xl text-white">{ind.title}</h1>
             </Card>
           ))}
         </div>
