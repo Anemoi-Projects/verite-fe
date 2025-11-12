@@ -35,27 +35,27 @@ const PHILOSOPHY = [
 const INDUSTRIES = [
   {
     title: "Textiles",
-    image: "/Industry/1.png",
+    image: "/Industry/1.jpg",
   },
   {
     title: "Electronics",
-    image: "/Industry/2.png",
+    image: "/Industry/2.jpg",
   },
   {
     title: "Constructions",
-    image: "/Industry/3.png",
+    image: "/Industry/3.jpg",
   },
   {
     title: "Adhesives",
-    image: "/Industry/4.png",
+    image: "/Industry/4.jpg",
   },
   {
     title: "FMCG",
-    image: "/Industry/5.png",
+    image: "/Industry/5.jpg",
   },
   {
     title: "Jewellery",
-    image: "/Industry/6.png",
+    image: "/Industry/6.jpg",
   },
 ];
 export default function Home() {
@@ -75,6 +75,12 @@ export default function Home() {
   const currentTheme = theme === "system" ? systemTheme : theme;
   const heroImage =
     currentTheme === "light" ? "/hero-light.png" : "/hero-dark.png";
+  const contactBGImage =
+    currentTheme === "light" ? "/contact-bg-light.jpg" : "/contact-bg-dark.png";
+  const industryBGImage =
+    currentTheme === "light"
+      ? "/industries-bg-light.jpg"
+      : "/industries-bg-dark.png";
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-16">
@@ -90,11 +96,11 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h1 className="text-7xl">Trust, Verified</h1>
-        <h1 className="text-7xl mb-5 leading-none pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
+        <h1 className="text-7xl text-center">Trust, Verified</h1>
+        <h1 className="text-7xl text-center mb-5 leading-none pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
           From Origin to Ownership
         </h1>
-        <p className="text-2xl mb-5 font-barlow">
+        <p className="text-2xl text-center mb-5 font-barlow">
           True ownership, verified by technology
         </p>
         <Button className="flex flex-row gap-x-3 items-center theme-button">
@@ -104,77 +110,82 @@ export default function Home() {
       </section>
       {/* Hero Section END */}
 
-      {/* Project Philosophy START */}
-      <section id="project-philosophy">
-        <div className="px-10 py-12">
-          <h1 className="text-4xl text-center mb-5">DPP At Your Fingertips</h1>
-          <p className="text-lg text-center  mb-10">
-            Verite is transforming trust for the digital age. Our secure,
-            blockchain-powered product passports  guarantee authenticity,
-            compliance, and sustainability — eliminating counterfeiting and
-            bringing  seamless transparency to global supply chains. Every
-            product tells its true story, empowering brands and  consumers to
-            verify origin, ownership, and ethics with a single scan.
-          </p>
-          <Button
-            className={"flex flex-row items-center gap-3 mx-auto theme-button"}
-          >
-            <span>Talk to a DPP Expert</span>
-            <ArrowRight size={20} />
-          </Button>
-        </div>
-
-        <div
-          className="px-10 py-20 pb-40"
-          style={{
-            backgroundImage: `url('/story-bg.png')`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-          }}
+      {/* DPP START */}
+      <section className="px-10 py-12">
+        <h1 className="text-5xl text-center mb-5">DPP At Your Fingertips</h1>
+        <p className="text-lg text-center  mb-10">
+          Verite is transforming trust for the digital age. Our secure,
+          blockchain-powered product passports  guarantee authenticity,
+          compliance, and sustainability — eliminating counterfeiting and
+          bringing  seamless transparency to global supply chains. Every product
+          tells its true story, empowering brands and  consumers to verify
+          origin, ownership, and ethics with a single scan.
+        </p>
+        <Button
+          className={"flex flex-row items-center gap-3 mx-auto theme-button"}
         >
-          <div className="w-1/2 text-center text-white">
-            <h1 className="text-6xl mb-8">Our Story</h1>
+          <span>Talk to a DPP Expert</span>
+          <ArrowRight size={20} />
+        </Button>
+      </section>
+      {/* DPP END */}
 
-            <p className="text-lg mb-3">
-              At Verite, our founders united decades of expertise in
-              counterfeiting prevention and product  authentication after
-              witnessing the escalating risks and sophistication of fraud
-              worldwide.
-            </p>
-            <p className="text-lg mb-3">
-              From  sportswear to jewellery, brands have trusted us to protect
-              identities and verify the truth behind global goods.
-            </p>
-            <p className="text-lg mb-3">
-              Our mission is to raise the standard for transparency and empower
-              brands and consumers alike to  demand authenticity at every step.
-            </p>
-            <p className="text-lg mb-3">
-              In partnership with industry leaders, we set new benchmarks for
-              trust,  ethics, and innovation across the supply chain.
-            </p>
-          </div>
+      {/* Our Story START */}
+      <section
+        className="px-10 py-20 pb-40"
+        style={{
+          backgroundImage: `url('/story-dark.jpg')`,
+          backgroundPosition: "top",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="w-1/2 text-center text-white">
+          <h1 className="text-5xl mb-8">Our Story</h1>
+
+          <p className="text-lg mb-3">
+            At Verite, our founders united decades of expertise in
+            counterfeiting prevention and product  authentication after
+            witnessing the escalating risks and sophistication of fraud
+            worldwide.
+          </p>
+          <p className="text-lg mb-3">
+            From  sportswear to jewellery, brands have trusted us to protect
+            identities and verify the truth behind global goods.
+          </p>
+          <p className="text-lg mb-3">
+            Our mission is to raise the standard for transparency and empower
+            brands and consumers alike to  demand authenticity at every step.
+          </p>
+          <p className="text-lg mb-3">
+            In partnership with industry leaders, we set new benchmarks for
+            trust,  ethics, and innovation across the supply chain.
+          </p>
         </div>
-        <div className="px-10 py-12">
-          <div className="flex items-center justify-between gap-10 mt-8">
-            <div className="w-2/5 space-y-5">
-              {PHILOSOPHY.map((item, i) => (
-                <div
-                  key={`philosophy-${i}`}
-                  className={cn(
-                    `pb-5 ${i < PHILOSOPHY.length - 1 && "border-b"}`
-                  )}
-                >
-                  <h5 className="text-2xl mb-2">{item?.title}</h5>
-                  <p className="text-base">{item?.text}</p>
-                </div>
-              ))}
-            </div>
-            <div className="w-1/2 relative h-[600px]">
-              <Image src={"/xrp-gold.png"} fill alt="xrp-gold" />
-            </div>
+      </section>
+      {/* Our Story END */}
+
+      {/* Project Philosophy START */}
+      <section id="project-philosophy" className="px-10 py-12">
+        <h1 className="text-5xl text-center ">Our Philosophy</h1>
+
+        <div className="flex items-center justify-between gap-10 mt-8">
+          <div className="w-2/5 space-y-5">
+            {PHILOSOPHY.map((item, i) => (
+              <div
+                key={`philosophy-${i}`}
+                className={cn(
+                  `pb-5 ${i < PHILOSOPHY.length - 1 && "border-b"}`
+                )}
+              >
+                <h5 className="text-2xl mb-2">{item?.title}</h5>
+                <p className="text-base">{item?.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="w-1/2 relative h-[600px]">
+            <Image src={"/xrp-gold.png"} fill alt="xrp-gold" />
           </div>
         </div>
       </section>
@@ -182,7 +193,7 @@ export default function Home() {
 
       {/* Partners START */}
       <section className="px-10 py-12">
-        <p className="text-2xl text-center uppercase">
+        <p className="text-3xl text-center uppercase">
           Powered by leading partners
         </p>
         <p className="text-base text-center">
@@ -272,28 +283,48 @@ export default function Home() {
 
       {/* Industries START */}
       <section
-        className="px-10 py-20 pt-14 "
+        className="px-10 py-20 pt-28 xl:pt-48"
         style={{
-          backgroundImage: `url('industries-bg.png')`,
-          backgroundPosition: "center",
+          backgroundImage: `url(${industryBGImage})`,
+          backgroundPosition: "top",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h1 className="text-5xl text-center text-white">Industries We Serve</h1>
-
-        <div className="grid grid-cols-3 gap-5 gap-y-10 w-full xl:max-w-4/5 mx-auto mt-24">
+        <div className=" flex  justify-center">
+          <span className="font-barlow  text-5xl text-center">
+            Industries We Serve
+          </span>
+        </div>
+        <div className="grid grid-cols-3 gap-5 gap-y-10 w-full xl:max-w-4/5 mx-auto mt-12">
           {INDUSTRIES.map((ind, i) => (
-            <Card
+            <div
               key={i}
-              className={"bg-[#2E2E2E]/50 flex-row pb-0 px-5 border-0"}
+              className="box-item col-span-3 lg:col-span-1 aspect-square cursor-pointer"
             >
-              <Image src={ind.image} width={103} height={104} alt={ind.title} />
-              <h1 className="text-2xl text-white">{ind.title}</h1>
-            </Card>
+              <div className="flip-box h-full">
+                <div
+                  className="flip-box-front p-8 h-full text-center bg-amber-100"
+                  style={{ backgroundImage: `url(${ind.image})` }}
+                >
+                  <div className="inner color-white">
+                    <h3 className="flip-box-header text-white text-5xl">
+                      {ind.title}
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  className="flip-box-back p-8 h-full text-center bg-amber-100"
+                  style={{ backgroundImage: `url(${ind.image})` }}
+                >
+                  <div className="inner color-white text-white text">
+                    <p>A short sentence describing this callout is.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-        <div className="h-72"></div>
       </section>
       {/* Industries END */}
 
@@ -325,14 +356,14 @@ export default function Home() {
         id="contact"
         className="px-10 py-20 flex flex-col items-center justify-center"
         style={{
-          backgroundImage: `url('/contact-bg.png')`,
+          backgroundImage: `url(${contactBGImage})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
         <div className="w-3/5">
-          <h1 className="text-7xl text-center text-white">
+          <h1 className="text-7xl text-center">
             The Authenticity of your products{" "}
             <span className="text-7xl mb-5 leading-none pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
               starts here.

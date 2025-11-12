@@ -16,8 +16,7 @@ const PARTNERS = [
   "/logo-3.png",
   "/logo-4.png",
   "/logo-5.png",
-  "/logo-6.png",
-  "/logo-7.png",
+  "/logo-3.png",
 ];
 
 export function Partners() {
