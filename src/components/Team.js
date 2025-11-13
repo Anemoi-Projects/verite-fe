@@ -55,22 +55,29 @@ export function Teams() {
       >
         <CarouselContent>
           {TEAMS.map((item, index) => (
-            <CarouselItem key={index} className="basis-1 md:basis-1/3">
+            <CarouselItem
+              key={index}
+              className="basis-full md:basis-1/2 lg:basis-1/3"
+            >
               <Card className="p-0 rounded-2xl shadow-sm">
-                <CardContent className=" p-5 pb-0 flex items-center justify-betweenl">
+                <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center justify-between">
                   <img
                     src={item.imgURL}
                     alt="logo"
-                    className="object-contain"
+                    className="mx-auto md:mx-0 object-contain"
                   />
-                  <div className="w-full">
-                    <p className="text-[#D1AAD7] text-base mb-2">
+                  <div className="w-full mt-3 lg:mt-0">
+                    <p className="text-[#D1AAD7] text-base mb-2 text-center lg:text-left">
                       {item?.role}
                     </p>
-                    <p className="text-2xl mb-2 capitalize">{item?.name}</p>
-                    <Link href={item.linkedInURL} className="text-gray-400">
-                      LinkedIn URL
-                    </Link>
+                    <p className="text-2xl mb-2 capitalize text-center lg:text-left">
+                      {item?.name}
+                    </p>
+                    <div className="flex justify-center lg:justify-start">
+                      <Link href={item.linkedInURL} className="text-gray-400 ">
+                        LinkedIn URL
+                      </Link>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

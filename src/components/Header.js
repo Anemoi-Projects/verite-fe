@@ -1,36 +1,38 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import ThemeToggler from "./ThemeToggler";
 
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 const LINKS = [
-  {
-    title: "Project Philosophy",
-    link: "#project-philosophy",
-  },
-  {
-    title: "Solution",
-    link: "#solution",
-  },
-  {
-    title: "Team",
-    link: "#team",
-  },
-  {
-    title: "FAQ",
-    link: "#faq",
-  },
-  {
-    title: "Contact",
-    link: "#contact",
-  },
+  { title: "Project Philosophy", link: "#project-philosophy" },
+  { title: "Solution", link: "#solution" },
+  { title: "Team", link: "#team" },
+  { title: "FAQ", link: "#faq" },
+  { title: "Contact", link: "#contact" },
 ];
 
-const Header = () => {
+export default function Header() {
   return (
-    <header className="px-10 mx-auto h-16 flex justify-between items-center fixed top-0 w-full bg-white dark:bg-black z-10 shadow">
-      <div className="relative">
+    <header className="px-6 lg:px-10 mx-auto h-16 flex justify-between items-center fixed top-0 w-full bg-white dark:bg-black z-10 shadow">
+      <div className="relative flex items-center">
         <Image
           src={"/logo.png"}
           className="object-contain"
@@ -39,19 +41,62 @@ const Header = () => {
           alt="verite-logo"
         />
       </div>
-      <div className="flex flex-row gap-8">
-        {LINKS.map((item, index) => (
-          <Link href={item.link} key={`link-${index}`}>
-            {item.title}
-          </Link>
-        ))}
+
+      {/* Desktop Navigation */}
+      <div className="hidden lg:flex items-center gap-10">
+        <NavigationMenu>
+          <NavigationMenuList className="flex gap-6">
+            {LINKS.map((item, index) => (
+              <NavigationMenuItem key={index}>
+                <Link
+                  href={item.link}
+                  className="text-sm hover:underline transition"
+                >
+                  {item.title}
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
-      <div className="flex flex-row gap-3 items-center">
-        <Button className={"theme-button"}>View App</Button>
+
+      {/* Right Side (Desktop) */}
+      <div className="hidden lg:flex items-center gap-3">
+        <Button className="theme-button">View App</Button>
         <ThemeToggler />
+      </div>
+
+      {/* Mobile Menu */}
+      <div className="lg:hidden flex items-center gap-3">
+        <div className="relative">
+          <ThemeToggler />
+        </div>
+
+        <Sheet>
+          <SheetTrigger>
+            <Menu className="h-6 w-6" />
+          </SheetTrigger>
+
+          <SheetContent side="right" className="w-4/5">
+            <SheetHeader></SheetHeader>
+            <div className="p-5">
+              <nav className="flex flex-col mt-6 gap-6">
+                {LINKS.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="text-lg font-medium"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+
+                <Button className="mt-4 theme-button w-full">View App</Button>
+              </nav>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
-};
-
-export default Header;
+}

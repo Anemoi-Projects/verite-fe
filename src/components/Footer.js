@@ -46,28 +46,28 @@ const Footer = () => {
   }
 
   return (
-    <footer className="px-10 py-20 flex gap-10 justify-between items-start">
-      <div className="w-1/4 text-black/60 dark:text-[#B4BCD0]/60 flex flex-col">
-        <h1 className="text-black dark:text-[#B4BCD0] text-lg mb-5">
+    <footer className="px-10 py-20 flex flex-wrap md:flex-nowrap gap-10 justify-between items-start">
+      <div className="w-full md:w-1/4 text-black/60 dark:text-[#B4BCD0]/60 flex flex-col order-3 md:order-1">
+        <h1 className="text-black dark:text-[#B4BCD0] text-base lg:text-lg mb-3 lg:mb-5">
           Reach US:
         </h1>
-        <p className="mb-5">
+        <p className="text-sm lg:text-base mb-3 lg:mb-5">
           Lorem Ipsum Text for address will come here. Lorem Ipsum Text for
           address will come here.
         </p>
         <Link
           href={"mailTo:email@email.com"}
-          className="underline cursor-pointer mb-1"
+          className="underline cursor-pointer mb-1 text-sm lg:text-base"
         >
           email@email.com
         </Link>
         <Link
           href={"mailTo:email@email.com"}
-          className="underline cursor-pointer mb-1"
+          className="underline cursor-pointer mb-1 text-sm lg:text-base"
         >
           email@email.com
         </Link>
-        <p>Phone No.</p>
+        <p className="text-sm lg:text-base ">Phone No.</p>
         <div className="flex items-center gap-x-5 mt-5">
           <Link href={"#"}>
             <Twitter color={theme == "dark" ? "white" : "black"} size={25} />
@@ -83,11 +83,11 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="w-2/4 flex flex-col justify-center items-center h-full py-10">
+      <div className="w-full md:w-2/4 flex flex-col lg:justify-center lg:items-center h-full lg:py-10 order-1 md:order-2">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 w-3/4 "
+            className="space-y-8 w-full lg:w-3/4 "
           >
             <FormField
               control={form.control}
@@ -106,10 +106,10 @@ const Footer = () => {
                 </FormItem>
               )}
             />
-            <div className="flex  justify-center">
+            <div className="flex  justify-start lg:justify-center">
               <Button
                 type="submit"
-                className={"theme-button mx-auto inline-flex items-center"}
+                className={"theme-button lg:mx-auto inline-flex items-center"}
               >
                 <span>Join Our Mailing List</span>
                 <ArrowRight size={20} />
@@ -118,21 +118,33 @@ const Footer = () => {
           </form>
         </Form>
       </div>
-      <div className="w-1/4 text-black/60 dark:text-[#B4BCD0]/60 flex flex-col">
-        <h1 className="text-black dark:text-[#B4BCD0] text-lg mb-5">
+      <div className="w-full md:w-1/4 text-black/60 dark:text-[#B4BCD0]/60 flex flex-col order-2 md:order-3">
+        <h1 className="text-black dark:text-[#B4BCD0] text-base lg:text-lg mb-3 lg:mb-5">
           Developers
         </h1>
 
-        <Link href={"#project-philosophy"} className="cursor-pointer mb-2">
+        <Link
+          href={"#project-philosophy"}
+          className="cursor-pointer mb-2 text-sm lg:text-base"
+        >
           Project Philosophy
         </Link>
-        <Link href={"#team"} className="cursor-pointer mb-2">
+        <Link
+          href={"#team"}
+          className="cursor-pointer mb-2 text-sm lg:text-base"
+        >
           Team
         </Link>
-        <Link href={"#solution"} className="cursor-pointer mb-2">
+        <Link
+          href={"#solution"}
+          className="cursor-pointer mb-2 text-sm lg:text-base"
+        >
           Solution
         </Link>
-        <Link href={"#contact"} className="cursor-pointer mb-2">
+        <Link
+          href={"#contact"}
+          className="cursor-pointer mb-2 text-sm lg:text-base"
+        >
           Contact
         </Link>
       </div>

@@ -38,7 +38,7 @@ export function Partners() {
           {PARTNERS.map((logo, index) => (
             <CarouselItem
               key={index}
-              className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
+              className="basis-full sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
             >
               <Card className="bg-black border border-neutral-200 dark:border-neutral-700 rounded-2xl shadow-sm h-28">
                 <CardContent className="flex items-center justify-center h-full">
@@ -53,8 +53,8 @@ export function Partners() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden lg:flex" />
-        <CarouselNext className="hidden lg:flex" />
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </div>
   );

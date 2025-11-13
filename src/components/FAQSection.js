@@ -86,7 +86,7 @@ export default function FAQSection() {
       : FAQS.filter((faq) => faq.tag === selectedTag);
 
   return (
-    <section className="px-10 py-16">
+    <section className="lg:px-10 py-5 lg:py-16">
       {/* Tag Filter Buttons */}
       {/* <div className="flex flex-wrap justify-center gap-6 mb-10">
         {uniqueTags.map((tag) => (
@@ -105,7 +105,7 @@ export default function FAQSection() {
       </div> */}
 
       {/* Accordion Section */}
-      <div className="max-w-3/4 mx-auto">
+      <div className="w-full lg:max-w-3/4 mx-auto">
         <Accordion type="single" collapsible className="w-full space-y-2">
           {filteredFaqs.map((faq, index) => (
             <AccordionItem
@@ -113,7 +113,7 @@ export default function FAQSection() {
               value={`item-${index}`}
               className="border rounded-lg overflow-hidden dark:border-gray-700 cursor-pointer"
             >
-              <AccordionTrigger className="text-lg font-semibold px-4 py-3 text-left bg-gray-50 dark:bg-white dark:text-black hover:no-underline rounded-b-none cursor-pointer">
+              <AccordionTrigger className="text-base md:text-lg font-semibold px-4 py-3 text-left bg-gray-50 dark:bg-white dark:text-black hover:no-underline rounded-b-none cursor-pointer">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="px-4 py-3 text-gray-700 dark:text-gray-500 bg-white dark:bg-white">

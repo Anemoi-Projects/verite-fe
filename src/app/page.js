@@ -98,11 +98,11 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h1 className="text-7xl text-center">Trust, Verified</h1>
-        <h1 className="text-7xl text-center mb-5 leading-none pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
+        <h1 className="text-3xl lg:text-7xl text-center">Trust, Verified</h1>
+        <h1 className="text-3xl lg:text-7xl text-center mb-5 leading-none lg:pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
           From Origin to Ownership
         </h1>
-        <p className="text-2xl text-center mb-5 font-barlow">
+        <p className="text-xl lg:text-2xl text-center mb-5 font-barlow">
           True ownership, verified by technology
         </p>
         <Button className="flex flex-row gap-x-3 items-center theme-button">
@@ -114,8 +114,10 @@ export default function Home() {
 
       {/* DPP START */}
       <section className="px-10 py-12">
-        <h1 className="text-5xl text-center mb-5">DPP At Your Fingertips</h1>
-        <p className="text-lg text-center  mb-10">
+        <h1 className="text-3xl lg:text-5xl text-center mb-5">
+          DPP At Your Fingertips
+        </h1>
+        <p className="text-sm lg:text-lg text-center  mb-10">
           Verite is transforming trust for the digital age. Our secure,
           blockchain-powered product passports  guarantee authenticity,
           compliance, and sustainability — eliminating counterfeiting and
@@ -134,7 +136,7 @@ export default function Home() {
 
       {/* Our Story START */}
       <section
-        className="px-10 py-20 pb-40"
+        className="px-10 py-10 lg:py-20 pb-40"
         style={{
           backgroundImage: `url('/story-dark.jpg')`,
           backgroundPosition: "top",
@@ -143,24 +145,24 @@ export default function Home() {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="w-1/2 text-center text-white">
-          <h1 className="text-5xl mb-8">Our Story</h1>
+        <div className="w-full md:3/4 lg:w-1/2 text-center text-white">
+          <h1 className="text-3xl lg:text-5xl mb-8">Our Story</h1>
 
-          <p className="text-lg mb-3">
+          <p className="text-base md:text-lg mb-3">
             At Verite, our founders united decades of expertise in
             counterfeiting prevention and product  authentication after
             witnessing the escalating risks and sophistication of fraud
             worldwide.
           </p>
-          <p className="text-lg mb-3">
+          <p className="text-base md:text-lg mb-3">
             From  sportswear to jewellery, brands have trusted us to protect
             identities and verify the truth behind global goods.
           </p>
-          <p className="text-lg mb-3">
+          <p className="text-base md:text-lg mb-3">
             Our mission is to raise the standard for transparency and empower
             brands and consumers alike to  demand authenticity at every step.
           </p>
-          <p className="text-lg mb-3">
+          <p className="text-base md:text-lg mb-3">
             In partnership with industry leaders, we set new benchmarks for
             trust,  ethics, and innovation across the supply chain.
           </p>
@@ -170,10 +172,10 @@ export default function Home() {
 
       {/* Project Philosophy START */}
       <section id="project-philosophy" className="px-10 py-12">
-        <h1 className="text-5xl text-center ">Our Philosophy</h1>
+        <h1 className="text-3xl lg:text-5xl text-center ">Our Philosophy</h1>
 
-        <div className="flex items-center justify-between gap-10 mt-8">
-          <div className="w-2/5 space-y-5">
+        <div className="flex flex-wrap items-center justify-between gap-10 mt-8">
+          <div className="w-full md:w-2/5 space-y-5">
             {PHILOSOPHY.map((item, i) => (
               <div
                 key={`philosophy-${i}`}
@@ -181,12 +183,12 @@ export default function Home() {
                   `pb-5 ${i < PHILOSOPHY.length - 1 && "border-b"}`
                 )}
               >
-                <h5 className="text-2xl mb-2">{item?.title}</h5>
-                <p className="text-base">{item?.text}</p>
+                <h5 className="text-xl md:text-2xl mb-2">{item?.title}</h5>
+                <p className="text-sm md:text-base">{item?.text}</p>
               </div>
             ))}
           </div>
-          <div className="w-1/2 relative h-[600px]">
+          <div className="w-full md:w-1/2 relative aspect-square lg:aspect-auto lg:h-[600px]">
             <Image src={"/lock.jpg"} fill alt="xrp-gold" />
           </div>
         </div>
@@ -195,10 +197,10 @@ export default function Home() {
 
       {/* Partners START */}
       <section className="px-10 py-12">
-        <p className="text-3xl text-center uppercase">
+        <p className="text-xl md:text-3xl text-center uppercase">
           Powered by leading partners
         </p>
-        <p className="text-base text-center">
+        <p className="text-sm lg:text-base text-center">
           world-class AI and blockchain for next-generation product verification
         </p>
         <Partners />
@@ -212,23 +214,23 @@ export default function Home() {
             Solution
           </span>
         </div>
-        <h1 className="mt-5 text-5xl text-center">
+        <h1 className="mt-5 text-xl md:text-3xl lg:text-5xl text-center">
           Creating a Digital Product Passport
         </h1>
-        <p className="text-xl text-center mt-3 text-slate-400 dark:text-[#D1D5DB]">
+        <p className="text-sm md:text-xl text-center mt-3 text-slate-400 dark:text-[#D1D5DB]">
           Nullam euismod, nisl non dignissim fringilla, erat felis dictum
           ligula, vel luctus massa odio ac dolor
         </p>
-        <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border mt-10 flex items-center justify-between">
-          <div className="relative w-3/5 aspect-auto">
+        <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border mt-10 flex flex-wrap items-center justify-between">
+          <div className="relative w-full lg:w-3/5 aspect-auto order-1">
             <img src="/unique.jpg" alt="XRP" className="object-contain" />
           </div>
-          <div className="px-10 w-2/5">
-            <h1 className="text-4xl mb-2">Unique</h1>
-            <p className="text-base text-gray-400 mb-8">
+          <div className="px-5 lg:px-10 w-full lg:w-2/5 order-2">
+            <h1 className="mt-3 md:mt-0 text-2xl md:text-4xl mb-2">Unique</h1>
+            <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-8">
               Nullam euismod, nisl non dignissim fringilla
             </p>
-            <p className="text-base mb-8">
+            <p className="text-sm md:text-base mb-4 md:mb-8">
               Every product receives a unique digital passport, securely
               recorded and tracked with blockchain.
             </p>
@@ -238,13 +240,13 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border flex items-center justify-between">
-          <div className="px-10 w-2/5">
-            <h1 className="text-4xl mb-2">Verified</h1>
-            <p className="text-base text-gray-400 mb-8">
+        <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border flex flex-wrap items-center justify-between">
+          <div className="px-5 lg:px-10 w-full lg:w-2/5 order-2 lg:order-1">
+            <h1 className="mt-3 md:mt-0 text-2xl md:text-4xl mb-2">Verified</h1>
+            <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-8">
               Nullam euismod, nisl non dignissim fringilla
             </p>
-            <p className="text-base mb-8">
+            <p className="text-sm md:text-base mb-4 md:mb-8">
               Instant verification for any item, anywhere, by brands and
               consumers.
             </p>
@@ -253,7 +255,7 @@ export default function Home() {
               <ArrowRight size={20} />
             </Button>
           </div>
-          <div className="relative w-3/5 aspect-auto">
+          <div className="relative w-full lg:w-3/5 aspect-auto order-1 lgorder-2">
             <img
               src="/verify.jpg"
               alt="XRP"
@@ -261,16 +263,18 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border flex items-center justify-between">
-          <div className="relative w-3/5 aspect-auto">
+        <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border flex flex-wrap items-center justify-between">
+          <div className="relative w-full lg:w-3/5 aspect-auto order-1">
             <img src="/laptop.jpg" alt="XRP" className="object-contain" />
           </div>
-          <div className="px-10 w-2/5">
-            <h1 className="text-4xl mb-2">Supply Chain</h1>
-            <p className="text-base text-gray-400 mb-8">
+          <div className="px-5 lg:px-10 w-full lg:w-2/5 order-2">
+            <h1 className="mt-3 md:mt-0 text-2xl md:text-4xl mb-2">
+              Supply Chain
+            </h1>
+            <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-8">
               Nullam euismod, nisl non dignissim fringilla
             </p>
-            <p className="text-base mb-8">
+            <p className="text-sm md:text-base mb-4 md:mb-8">
               Sustainable, compliant, and transparent supply chains across
               industries
             </p>
@@ -285,7 +289,7 @@ export default function Home() {
 
       {/* Industries START */}
       <section
-        className="px-10 py-20 pt-28 dark:pt-12 xl:pt-48"
+        className="px-10 py-10 lg:py-20 pt-28 dark:pt-12 xl:pt-48"
         style={{
           backgroundImage: `url(${industryBGImage})`,
           backgroundPosition: "top",
@@ -294,15 +298,15 @@ export default function Home() {
         }}
       >
         <div className=" flex  justify-center">
-          <span className="font-barlow  text-5xl text-center">
+          <span className="font-barlow text-3xl lg:text-5xl text-center">
             Industries We Serve
           </span>
         </div>
-        <div className="grid grid-cols-3 gap-5 gap-y-10 w-full xl:max-w-4/5 mx-auto mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10 w-full xl:max-w-4/5 mx-auto mt-12">
           {INDUSTRIES.map((ind, i) => (
             <div
               key={i}
-              className="box-item col-span-3 lg:col-span-1 aspect-square cursor-pointer"
+              className="box-item col-span-1 aspect-square cursor-pointer"
             >
               <div className="flip-box h-full">
                 <div
@@ -310,7 +314,7 @@ export default function Home() {
                   style={{ backgroundImage: `url(${ind.image})` }}
                 >
                   <div className="inner color-white">
-                    <h3 className="flip-box-header text-white text-5xl">
+                    <h3 className="flip-box-header text-white text-3xl lg:text-5xl">
                       {ind.title}
                     </h3>
                   </div>
@@ -337,8 +341,10 @@ export default function Home() {
             TEAM
           </span>
         </div>
-        <h1 className="mt-5 text-5xl text-center">The Architects</h1>
-        <p className="text-xl text-center mt-3 text-slate-400 dark:text-[#D1D5DB]">
+        <h1 className="mt-5 text-3xl lg:text-5xl text-center">
+          The Architects
+        </h1>
+        <p className="text-base lg:text-xl text-center mt-3 text-slate-400 dark:text-[#D1D5DB]">
           Meet the innovators redefining trust and transparency in global
           commerce
         </p>
@@ -348,7 +354,7 @@ export default function Home() {
 
       {/* Faq START */}
       <section className="px-10 py-12" id="faq">
-        <h1 className="text-5xl text-center">Got Questions?</h1>
+        <h1 className="text-3xl lg:text-5xl text-center">Got Questions?</h1>
         <FAQSection />
       </section>
       {/* Faq END */}
@@ -356,7 +362,7 @@ export default function Home() {
       {/* Contact Us START */}
       <section
         id="contact"
-        className="px-10 py-20 flex flex-col items-center justify-center"
+        className="px-10 py-10 lg:py-20 flex flex-col items-center justify-center"
         style={{
           backgroundImage: `url(${contactBGImage})`,
           backgroundPosition: "center",
@@ -364,10 +370,10 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="w-3/5">
-          <h1 className="text-7xl text-center">
+        <div className="w-full lg:w-3/5">
+          <h1 className="text-3xl lg:text-7xl text-center">
             The Authenticity of your products{" "}
-            <span className="text-7xl mb-5 leading-none pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
+            <span className="text-3xl lg:text-7xl mb-5 leading-none pb-2 bg-clip-text text-transparent bg-[linear-gradient(to_right,#714DFF_0%,#9C83FF_31%,#E151FF_78%,#FFF759_96%)]">
               starts here.
             </span>
           </h1>
