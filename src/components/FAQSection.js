@@ -10,27 +10,65 @@ import {
 
 const FAQS = [
   {
-    question: "How does Verite’s blockchain passport work?",
+    question: "What does Vérité do?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam totam voluptas at eaque rem quaerat est deleniti laboriosam ab, non voluptatibus alias, ipsa asperiores. Tempora ullam illo distinctio dolores!",
+      "Vérité develops innovative technologies that protect and verify the authenticity of genuine products. We help brands secure their supply chains, prevent counterfeiting, and offer consumers a simple way to verify if a product is genuine— instantly and reliably.",
     tag: "Finance",
   },
   {
-    question: "What makes our system tamper-proof?",
+    question: "How does your technology work?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam totam voluptas at eaque rem quaerat est deleniti laboriosam ab, non voluptatibus alias, ipsa asperiores. Tempora ullam illo distinctio dolores!",
+      "Our solution combines digital fingerprints, AI-driven recognition, and blockchain traceability to create a unique digital identity for every product. This identity can be scanned or verified at any point in the supply chain or by the end consumer, proving the product’s authenticity and origin.",
     tag: "Finance",
   },
   {
-    question: "How does real-time transparency help your business?",
+    question: "What industries can benefit from your solution?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam totam voluptas at eaque rem quaerat est deleniti laboriosam ab, non voluptatibus alias, ipsa asperiores. Tempora ullam illo distinctio dolores!",
+      "Our technology is designed for a wide range of sectors, including: Fashion and luxury goods (to protect brand integrity and fight counterfeititems), Jewellery and watches (to ensure provenance and value), Sportswear (to verify official merchandise), Food and beverage (to guarantee safety and transparency), Pharmaceuticals (to combat counterfeit drugs and safeguard patients)",
     tag: "Tag 1",
   },
   {
-    question: "How can consumers check authenticity?",
+    question: "How can consumers verify if a product is genuine?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. In quibusdam totam voluptas at eaque rem quaerat est deleniti laboriosam ab, non voluptatibus alias, ipsa asperiores. Tempora ullam illo distinctio dolores!",
+      "Consumers can simply scan a unique digital code or embedded marker on the product using our partner app or platform. They’ll instantly receive confirmation that the product is authentic — along with transparent information about its origin, materials, or sustainability data.",
+    tag: "Tag 2",
+  },
+  {
+    question:
+      "What makes your technology different from traditional anticounterfeiting solutions?",
+    answer:
+      "Unlike basic serial numbers or printed QR codes, our system creates a tamperproof, dynamic digital identity that cannot be duplicated. It combines physical and digital verification, ensuring complete authenticity at every stage of a product’s life cycle",
+    tag: "Tag 2",
+  },
+  {
+    question: "How does this benefit brands?",
+    answer:
+      "Brands gain powerful tools to: Protect their reputation and intellectual property, Build consumer trust through transparency, Monitor distribution channels and detect fraud early, Collect valuable insights about product journeys and user engagement",
+    tag: "Tag 2",
+  },
+  {
+    question:
+      "Is the solution easy to integrate with existing production and supply chain systems?",
+    answer:
+      "Yes. Our platform is modular and scalable, designed to integrate smoothly with existing ERP, logistics, or product management systems — minimizing disruption and maximizing security.",
+    tag: "Tag 2",
+  },
+  {
+    question: "How does your solution support sustainability?",
+    answer:
+      "By providing traceability and product lifecycle data, our technology helps brands demonstrate environmental responsibility, track circular economy initiatives, and prove ethical sourcing — all while reducing waste caused by counterfeit and unsellable goods.",
+    tag: "Tag 2",
+  },
+  {
+    question: "Is the system secure?",
+    answer:
+      "Absolutely. Security is at the core of what we do. We use encrypted data layers, blockchain validation, and multi-level authentication to guarantee that product information cannot be altered or forged..",
+    tag: "Tag 2",
+  },
+  {
+    question: "How can a brand start working with Vérité?",
+    answer:
+      "It’s simple — our team provides an initial brand protection assessment to understand your needs, then designs a tailored solution that fits your products, supply chain, and customer experience. You can contact us directly through our partnership inquiry form to begin the process.",
     tag: "Tag 2",
   },
 ];
@@ -50,7 +88,7 @@ export default function FAQSection() {
   return (
     <section className="px-10 py-16">
       {/* Tag Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-6 mb-10">
+      {/* <div className="flex flex-wrap justify-center gap-6 mb-10">
         {uniqueTags.map((tag) => (
           <button
             key={tag}
@@ -64,7 +102,7 @@ export default function FAQSection() {
             {tag}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Accordion Section */}
       <div className="max-w-3/4 mx-auto">

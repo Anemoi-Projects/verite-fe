@@ -1,4 +1,5 @@
 "use client";
+import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -61,6 +62,7 @@ const INDUSTRIES = [
 export default function Home() {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [openContactForm, setOpenContactForm] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -80,7 +82,7 @@ export default function Home() {
   const industryBGImage =
     currentTheme === "light"
       ? "/industries-bg-light.jpg"
-      : "/industries-bg-dark.png";
+      : "/industries-bg-dark.jpg";
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-16">
@@ -185,7 +187,7 @@ export default function Home() {
             ))}
           </div>
           <div className="w-1/2 relative h-[600px]">
-            <Image src={"/xrp-gold.png"} fill alt="xrp-gold" />
+            <Image src={"/lock.jpg"} fill alt="xrp-gold" />
           </div>
         </div>
       </section>
@@ -219,7 +221,7 @@ export default function Home() {
         </p>
         <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border mt-10 flex items-center justify-between">
           <div className="relative w-3/5 aspect-auto">
-            <img src="/xrp.png" alt="XRP" className="object-contain" />
+            <img src="/unique.jpg" alt="XRP" className="object-contain" />
           </div>
           <div className="px-10 w-2/5">
             <h1 className="text-4xl mb-2">Unique</h1>
@@ -253,7 +255,7 @@ export default function Home() {
           </div>
           <div className="relative w-3/5 aspect-auto">
             <img
-              src="/apple.png"
+              src="/verify.jpg"
               alt="XRP"
               className="object-contain ml-auto"
             />
@@ -261,7 +263,7 @@ export default function Home() {
         </div>
         <div className="bg-gray-50 dark:bg-white/5 py-10 rounded-md border flex items-center justify-between">
           <div className="relative w-3/5 aspect-auto">
-            <img src="/laptop.png" alt="XRP" className="object-contain" />
+            <img src="/laptop.jpg" alt="XRP" className="object-contain" />
           </div>
           <div className="px-10 w-2/5">
             <h1 className="text-4xl mb-2">Supply Chain</h1>
@@ -283,7 +285,7 @@ export default function Home() {
 
       {/* Industries START */}
       <section
-        className="px-10 py-20 pt-28 xl:pt-48"
+        className="px-10 py-20 pt-28 dark:pt-12 xl:pt-48"
         style={{
           backgroundImage: `url(${industryBGImage})`,
           backgroundPosition: "top",
@@ -374,12 +376,14 @@ export default function Home() {
               className={
                 "flex flex-row gap-x-3 items-center mt-16 theme-button"
               }
+              onClick={() => setOpenContactForm(true)}
             >
               <span>Connect With Us</span>
               <ArrowRight size={20} />
             </Button>
           </div>
         </div>
+        <ContactForm open={openContactForm} setOpen={setOpenContactForm} />
       </section>
       {/* Contact Us END */}
 
