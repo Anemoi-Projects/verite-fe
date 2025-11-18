@@ -8,8 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import axios from "axios";
 import Autoplay from "embla-carousel-autoplay";
+import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { PulseLoader } from "react-spinners";
 
 const TEAMS = [
   {
@@ -39,6 +43,41 @@ const TEAMS = [
 ];
 
 export function Teams() {
+  const [loading, setLoading] = useState(true);
+  const [teamMembers, setTeamMembers] = useState([]);
+  const { theme } = useTheme();
+  const getTeamMembers = () => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: `${process.env.apiURL}/api/v1/team/getMembers?type=internalTeam`,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        // console.log(JSON.stringify(response.data));
+        if (response.data.success) {
+          setTeamMembers(response.data.data);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getTeamMembers();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="w-[90%] mx-auto my-10">
+        <PulseLoader size={25} color={theme == "light" ? "black" : "white"} />
+      </div>
+    );
+  }
   return (
     <div className="w-full px-10 mx-auto my-10">
       <Carousel
@@ -54,7 +93,7 @@ export function Teams() {
         className="w-full"
       >
         <CarouselContent>
-          {TEAMS.map((item, index) => (
+          {teamMembers.map((item, index) => (
             <CarouselItem
               key={index}
               className="basis-full md:basis-1/2 lg:basis-1/3"
@@ -62,19 +101,19 @@ export function Teams() {
               <Card className="p-0 rounded-2xl shadow-sm">
                 <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center justify-between">
                   <img
-                    src={item.imgURL}
+                    src={item?.picture}
                     alt="logo"
                     className="mx-auto md:mx-0 object-contain"
                   />
                   <div className="w-full mt-3 lg:mt-0">
                     <p className="text-[#D1AAD7] text-base mb-2 text-center lg:text-left">
-                      {item?.role}
+                      {item?.designation}
                     </p>
                     <p className="text-2xl mb-2 capitalize text-center lg:text-left">
                       {item?.name}
                     </p>
                     <div className="flex justify-center lg:justify-start">
-                      <Link href={item.linkedInURL} className="text-gray-400 ">
+                      <Link href={item.linkedIn} className="text-gray-400 ">
                         LinkedIn URL
                       </Link>
                     </div>
