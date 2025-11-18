@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import axios from "axios";
+import { useTheme } from "next-themes";
 
 const FAQS = [
   {
@@ -75,15 +77,41 @@ const FAQS = [
 
 export default function FAQSection() {
   const [selectedTag, setSelectedTag] = useState("All");
+  const [loading, setLoading] = useState(true);
+  const [faqs, setFaqs] = useState([]);
+  const { theme } = useTheme();
 
-  // Get unique tags
   const uniqueTags = ["All", ...new Set(FAQS.map((faq) => faq.tag))];
 
-  // Filter based on tag
   const filteredFaqs =
     selectedTag === "All"
       ? FAQS
       : FAQS.filter((faq) => faq.tag === selectedTag);
+
+  const getFAQs = () => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: `${process.env.apiURL}/api/v1/faq/getAllFAQ`,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        // console.log(JSON.stringify(response.data));
+        if (response.data.success) {
+          setFaqs(response.data.data);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getFAQs();
+  }, []);
 
   return (
     <section className="lg:px-10 py-5 lg:py-16">
@@ -107,7 +135,7 @@ export default function FAQSection() {
       {/* Accordion Section */}
       <div className="w-full lg:max-w-3/4 mx-auto">
         <Accordion type="single" collapsible className="w-full space-y-2">
-          {filteredFaqs.map((faq, index) => (
+          {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}

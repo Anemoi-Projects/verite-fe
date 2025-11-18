@@ -15,33 +15,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PulseLoader } from "react-spinners";
 
-const TEAMS = [
-  {
-    name: "Member One",
-    role: "Founder",
-    linkedInURL: "#",
-    imgURL: "/user-1.png",
-  },
-  {
-    name: "Member Two",
-    role: "Tech lead",
-    linkedInURL: "#",
-    imgURL: "/user-2.png",
-  },
-  {
-    name: "Member Three",
-    role: "Head of People",
-    linkedInURL: "#",
-    imgURL: "/user-3.png",
-  },
-  {
-    name: "Member Two",
-    role: "Tech lead",
-    linkedInURL: "#",
-    imgURL: "/user-2.png",
-  },
-];
-
 export function Teams() {
   const [loading, setLoading] = useState(true);
   const [teamMembers, setTeamMembers] = useState([]);
