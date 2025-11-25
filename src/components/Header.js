@@ -20,6 +20,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const LINKS = [
   { title: "Project Philosophy", link: "#project-philosophy" },
@@ -30,6 +32,35 @@ const LINKS = [
 ];
 
 export default function Header() {
+  const [linksData, setLinksData] = useState([]);
+  const [ctaButtons, setCtaButton] = useState([]);
+  const getHeaderData = () => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: `${process.env.apiURL}/api/v1/contents/getHeader`,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        // console.log(JSON.stringify(response.data));
+        let links = response.data.data?.links?.map((link) => ({
+          title: link.title,
+          url: link?.url,
+        }));
+
+        setLinksData(links);
+        setCtaButton(response.data.data.ctaButtons);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getHeaderData();
+  }, []);
   return (
     <header className="px-6 lg:px-10 mx-auto h-16 flex justify-between items-center fixed top-0 w-full bg-white dark:bg-black z-10 shadow">
       <div className="relative flex items-center">
@@ -46,10 +77,10 @@ export default function Header() {
       <div className="hidden lg:flex items-center gap-10">
         <NavigationMenu>
           <NavigationMenuList className="flex gap-6">
-            {LINKS.map((item, index) => (
+            {linksData.map((item, index) => (
               <NavigationMenuItem key={index}>
                 <Link
-                  href={item.link}
+                  href={item.link ?? "#"}
                   className="text-sm hover:underline transition"
                 >
                   {item.title}
@@ -62,7 +93,11 @@ export default function Header() {
 
       {/* Right Side (Desktop) */}
       <div className="hidden lg:flex items-center gap-3">
-        <Button className="theme-button">View App</Button>
+        {ctaButtons.map((item) => (
+          <Link key={item?._id} href={item?.url ?? "#"}>
+            <Button className="theme-button">View App</Button>
+          </Link>
+        ))}
         <ThemeToggler />
       </div>
 
@@ -81,7 +116,7 @@ export default function Header() {
             <SheetHeader></SheetHeader>
             <div className="p-5">
               <nav className="flex flex-col mt-6 gap-6">
-                {LINKS.map((item, index) => (
+                {linksData.map((item, index) => (
                   <Link
                     key={index}
                     href={item.link}
