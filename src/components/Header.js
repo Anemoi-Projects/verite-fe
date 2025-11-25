@@ -80,7 +80,7 @@ export default function Header() {
             {linksData.map((item, index) => (
               <NavigationMenuItem key={index}>
                 <Link
-                  href={item.link ?? "#"}
+                  href={item.url ?? "#"}
                   className="text-sm hover:underline transition"
                 >
                   {item.title}
@@ -119,7 +119,7 @@ export default function Header() {
                 {linksData.map((item, index) => (
                   <Link
                     key={index}
-                    href={item.link}
+                    href={item.url}
                     className="text-lg font-medium"
                   >
                     {item.title}

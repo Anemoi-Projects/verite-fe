@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { Inter, Barlow } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${barlow.variable} antialiased`}>
+        <Toaster position={"top-right"} />
         <ThemeProvider attribute={"class"} enableSystem defaultTheme="dark">
           {children}
         </ThemeProvider>

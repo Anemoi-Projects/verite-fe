@@ -24,27 +24,56 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import axios from "axios";
+import { toast } from "sonner";
+import { ClipLoader } from "react-spinners";
 
 const ContactSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
-  email: z.string().email("Invalid email"),
+  emailId: z.string().email("Invalid emailId"),
   message: z.string().min(5, "Message should be at least 5 characters"),
 });
 
 export default function ContactForm({ open, setOpen }) {
+  const [loading, setLoading] = useState(false);
   const form = useForm({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
       fullName: "",
-      email: "",
+      emailId: "",
       message: "",
     },
   });
 
   const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    setOpen(false);
-    form.reset();
+    console.log(data);
+    setLoading(true);
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: `${process.env.apiURL}/api/v1/enquiry/createEnquiry`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        if (response.data.success) {
+          toast.success("Message sent");
+        }
+        setLoading(false);
+        setOpen(false);
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("Something went wrong, Try again.");
+        setLoading(false);
+      });
   };
 
   return (
@@ -74,12 +103,12 @@ export default function ContactForm({ open, setOpen }) {
 
             <FormField
               control={form.control}
-              name="email"
+              name="emailId"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your email" {...field} />
+                    <Input placeholder="Enter your emailId" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -105,8 +134,12 @@ export default function ContactForm({ open, setOpen }) {
             />
 
             <DialogFooter>
-              <Button type="submit" className={"theme-button"}>
-                Submit
+              <Button
+                type="submit"
+                className={"theme-button"}
+                disabled={loading}
+              >
+                {loading ? <ClipLoader size={25} color="white" /> : "Submit"}
               </Button>
             </DialogFooter>
           </form>
