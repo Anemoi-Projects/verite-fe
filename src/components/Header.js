@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/sheet";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ViewAppForm from "./ViewAppForm";
 
 const LINKS = [
   { title: "Project Philosophy", link: "#project-philosophy" },
@@ -34,6 +35,7 @@ const LINKS = [
 export default function Header() {
   const [linksData, setLinksData] = useState([]);
   const [ctaButtons, setCtaButton] = useState([]);
+  const [openViewApp, setOpenViewApp] = useState(false);
   const getHeaderData = () => {
     let config = {
       method: "get",
@@ -94,9 +96,13 @@ export default function Header() {
       {/* Right Side (Desktop) */}
       <div className="hidden lg:flex items-center gap-3">
         {ctaButtons.map((item) => (
-          <Link key={item?._id} href={item?.url ?? "#"}>
-            <Button className="theme-button">View App</Button>
-          </Link>
+          <Button
+            key={item?._id}
+            className="theme-button"
+            onClick={() => setOpenViewApp(true)}
+          >
+            {item.title}
+          </Button>
         ))}
         <ThemeToggler />
       </div>
@@ -126,12 +132,22 @@ export default function Header() {
                   </Link>
                 ))}
 
-                <Button className="mt-4 theme-button w-full">View App</Button>
+                {ctaButtons.map((item) => (
+                  <Button
+                    key={item?._id}
+                    className="theme-button"
+                    onClick={() => setOpenViewApp(true)}
+                  >
+                    {item.title}
+                  </Button>
+                ))}
               </nav>
             </div>
           </SheetContent>
         </Sheet>
       </div>
+
+      <ViewAppForm open={openViewApp} setOpen={setOpenViewApp} />
     </header>
   );
 }
