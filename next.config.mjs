@@ -2,7 +2,7 @@
 const nextConfig = {
   env: {
     // apiURL: "http://localhost:8080",
-    apiURL: "https://verite-be.vercel.app",
+    apiURL: "https://be.aktorigins.com",
   },
   images: {
     remotePatterns: [new URL("https://res.cloudinary.com/**")],
