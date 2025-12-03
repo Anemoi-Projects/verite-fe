@@ -72,11 +72,11 @@ export function Teams() {
               className="basis-full md:basis-1/2 lg:basis-1/3"
             >
               <Card className="p-0 rounded-2xl shadow-sm">
-                <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center justify-between">
+                <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center justify-between gap-5">
                   <img
                     src={item?.picture}
                     alt="logo"
-                    className="mx-auto md:mx-0 object-contain"
+                    className="mx-auto md:mx-0 object-contain w-2/5"
                   />
                   <div className="w-full mt-3 lg:mt-0">
                     <p className="text-[#D1AAD7] text-base mb-2 text-center lg:text-left">

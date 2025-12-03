@@ -327,7 +327,7 @@
         position: absolute;
         left: 0;
         width: 100%;
-        padding: 60px;
+        /* padding: 60px; */
         outline: 1px solid transparent;
         -webkit-perspective: inherit;
         perspective: inherit;
