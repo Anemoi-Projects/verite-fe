@@ -62,6 +62,7 @@ export function Teams() {
         opts={{
           align: "start",
           loop: true,
+          gap: 15,
         }}
         className="w-full"
       >
@@ -69,20 +70,20 @@ export function Teams() {
           {teamMembers.map((item, index) => (
             <CarouselItem
               key={index}
-              className="basis-full md:basis-1/2 lg:basis-1/3"
+              className="basis-full md:basis-1/2 lg:basis-1/3 min-h-52"
             >
-              <Card className="p-0 rounded-2xl shadow-sm">
-                <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center justify-between gap-5">
+              <Card className="p-0 rounded-2xl shadow-sm h-full">
+                <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center lg:justify-between gap-5 h-full">
                   <img
                     src={item?.picture}
                     alt="logo"
-                    className="mx-auto md:mx-0 object-contain w-2/5"
+                    className="mx-auto md:mx-0 object-contain aspect-square w-full md:w-2/5"
                   />
                   <div className="w-full mt-3 lg:mt-0">
                     <p className="text-[#D1AAD7] text-base mb-2 text-center lg:text-left">
                       {item?.designation}
                     </p>
-                    <p className="text-2xl mb-2 capitalize text-center lg:text-left">
+                    <p className="text-2xl mb-1 capitalize text-center lg:text-left">
                       {item?.name}
                     </p>
                     <div className="flex justify-center lg:justify-start">
