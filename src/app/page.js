@@ -175,7 +175,11 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2 relative aspect-square lg:aspect-auto lg:h-[600px]">
             <Image
-              src={findSectionData(SECTION_4_ID, pageData)?.sectionMedia}
+              src={
+                findSectionData(SECTION_4_ID, pageData)?.sectionBackground?.[
+                  theme
+                ]
+              }
               fill
               alt="xrp-gold"
             />
