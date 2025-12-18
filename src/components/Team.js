@@ -88,7 +88,7 @@ export function Teams() {
                     </p>
                     <div className="flex justify-center lg:justify-start">
                       <Link href={item.linkedIn} className="text-gray-400 ">
-                        LinkedIn URL
+                        LinkedIn
                       </Link>
                     </div>
                   </div>
