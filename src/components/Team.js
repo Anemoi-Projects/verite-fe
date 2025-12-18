@@ -70,14 +70,14 @@ export function Teams() {
           {teamMembers.map((item, index) => (
             <CarouselItem
               key={index}
-              className="basis-full md:basis-1/2 lg:basis-1/3 min-h-52"
+              className="basis-full md:basis-1/2 lg:basis-1/3 min-h-44"
             >
               <Card className="p-0 rounded-2xl shadow-sm h-full">
                 <CardContent className=" p-5 lg:pb-0 flex flex-col lg:flex-row items-center lg:justify-between gap-5 h-full">
                   <img
                     src={item?.picture}
                     alt="logo"
-                    className="mx-auto md:mx-0 object-contain aspect-square w-full md:w-2/5"
+                    className="mx-auto md:mx-0 object-contain aspect-square h-32 w-32"
                   />
                   <div className="w-full mt-3 lg:mt-0">
                     <p className="text-[#D1AAD7] text-base mb-2 text-center lg:text-left">
