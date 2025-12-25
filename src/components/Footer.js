@@ -89,96 +89,136 @@ const Footer = () => {
         <h1 className="text-black dark:text-[#B4BCD0] text-base lg:text-lg mb-3 lg:mb-5">
           {findFooterData(SECTION_1_ID, footerData)?.title}
         </h1>
-        <p className="text-sm lg:text-base mb-3 lg:mb-5">
-          {
-            findFooterSectionData(
-              "6922ba293e0ef90cc830a6d6",
-              findFooterData(SECTION_1_ID, footerData)
-            )?.title
-          }
-        </p>
-        <Link
-          href={
-            findFooterSectionData(
-              "6922ba293e0ef90cc830a6d7",
-              findFooterData(SECTION_1_ID, footerData)
-            )?.url ?? "#"
-          }
-          className="underline cursor-pointer mb-1 text-sm lg:text-base"
-        >
-          {
-            findFooterSectionData(
-              "6922ba293e0ef90cc830a6d7",
-              findFooterData(SECTION_1_ID, footerData)
-            )?.title
-          }
-        </Link>
-        <Link
-          href={
-            findFooterSectionData(
-              "6922ba293e0ef90cc830a6d8",
-              findFooterData(SECTION_1_ID, footerData)
-            )?.url ?? "#"
-          }
-          className="underline cursor-pointer mb-1 text-sm lg:text-base"
-        >
-          {
-            findFooterSectionData(
-              "6922ba293e0ef90cc830a6d8",
-              findFooterData(SECTION_1_ID, footerData)
-            )?.title
-          }
-        </Link>
-        <p className="text-sm lg:text-base ">
-          {
-            findFooterSectionData(
-              "6922ba293e0ef90cc830a6d9",
-              findFooterData(SECTION_1_ID, footerData)
-            )?.title
-          }
-        </p>
+        {findFooterSectionData(
+          "6922ba293e0ef90cc830a6d6",
+          findFooterData(SECTION_1_ID, footerData)
+        )?.title !== "NA" && (
+          <p className="text-sm lg:text-base mb-3 lg:mb-5">
+            {
+              findFooterSectionData(
+                "6922ba293e0ef90cc830a6d6",
+                findFooterData(SECTION_1_ID, footerData)
+              )?.title
+            }
+          </p>
+        )}
+        {findFooterSectionData(
+          "6922ba293e0ef90cc830a6d7",
+          findFooterData(SECTION_1_ID, footerData)
+        )?.title !== "NA" && (
+          <Link
+            href={
+              findFooterSectionData(
+                "6922ba293e0ef90cc830a6d7",
+                findFooterData(SECTION_1_ID, footerData)
+              )?.url ?? "#"
+            }
+            className="underline cursor-pointer mb-1 text-sm lg:text-base"
+          >
+            {
+              findFooterSectionData(
+                "6922ba293e0ef90cc830a6d7",
+                findFooterData(SECTION_1_ID, footerData)
+              )?.title
+            }
+          </Link>
+        )}
+        {findFooterSectionData(
+          "6922ba293e0ef90cc830a6d8",
+          findFooterData(SECTION_1_ID, footerData)
+        )?.title !== "NA" && (
+          <Link
+            href={
+              findFooterSectionData(
+                "6922ba293e0ef90cc830a6d8",
+                findFooterData(SECTION_1_ID, footerData)
+              )?.url ?? "#"
+            }
+            className="underline cursor-pointer mb-1 text-sm lg:text-base"
+          >
+            {
+              findFooterSectionData(
+                "6922ba293e0ef90cc830a6d8",
+                findFooterData(SECTION_1_ID, footerData)
+              )?.title
+            }
+          </Link>
+        )}
+        {findFooterSectionData(
+          "6922ba293e0ef90cc830a6d9",
+          findFooterData(SECTION_1_ID, footerData)
+        )?.title !== "NA" && (
+          <p className="text-sm lg:text-base ">
+            {
+              findFooterSectionData(
+                "6922ba293e0ef90cc830a6d9",
+                findFooterData(SECTION_1_ID, footerData)
+              )?.title
+            }
+          </p>
+        )}
         {/* Socials */}
         <div className="flex items-center gap-x-5 mt-5">
-          <Link
-            href={
-              findFooterSectionData(
-                "69254195399388b2d08a2789",
-                findFooterData(SECTION_4_ID, footerData)
-              )?.url ?? "#"
-            }
-          >
-            <Twitter color={theme == "dark" ? "white" : "black"} size={25} />
-          </Link>
-          <Link
-            href={
-              findFooterSectionData(
-                "69254195399388b2d08a278a",
-                findFooterData(SECTION_4_ID, footerData)
-              )?.url ?? "#"
-            }
-          >
-            <Github color={theme == "dark" ? "white" : "black"} size={25} />
-          </Link>
-          <Link
-            href={
-              findFooterSectionData(
-                "69254195399388b2d08a278b",
-                findFooterData(SECTION_4_ID, footerData)
-              )?.url ?? "#"
-            }
-          >
-            <Slack color={theme == "dark" ? "white" : "black"} size={25} />
-          </Link>
-          <Link
-            href={
-              findFooterSectionData(
-                "69254195399388b2d08a278c",
-                findFooterData(SECTION_4_ID, footerData)
-              )?.url ?? "#"
-            }
-          >
-            <Youtube color={theme == "dark" ? "white" : "black"} size={25} />
-          </Link>
+          {findFooterSectionData(
+            "69254195399388b2d08a2789",
+            findFooterData(SECTION_4_ID, footerData)
+          )?.url !== "#" && (
+            <Link
+              href={
+                findFooterSectionData(
+                  "69254195399388b2d08a2789",
+                  findFooterData(SECTION_4_ID, footerData)
+                )?.url ?? "#"
+              }
+            >
+              <Twitter color={theme == "dark" ? "white" : "black"} size={25} />
+            </Link>
+          )}
+          {findFooterSectionData(
+            "69254195399388b2d08a278a",
+            findFooterData(SECTION_4_ID, footerData)
+          )?.url !== "#" && (
+            <Link
+              href={
+                findFooterSectionData(
+                  "69254195399388b2d08a278a",
+                  findFooterData(SECTION_4_ID, footerData)
+                )?.url ?? "#"
+              }
+            >
+              <Github color={theme == "dark" ? "white" : "black"} size={25} />
+            </Link>
+          )}
+          {findFooterSectionData(
+            "69254195399388b2d08a278b",
+            findFooterData(SECTION_4_ID, footerData)
+          )?.url !== "#" && (
+            <Link
+              href={
+                findFooterSectionData(
+                  "69254195399388b2d08a278b",
+                  findFooterData(SECTION_4_ID, footerData)
+                )?.url ?? "#"
+              }
+            >
+              <Slack color={theme == "dark" ? "white" : "black"} size={25} />
+            </Link>
+          )}
+          {findFooterSectionData(
+            "69254195399388b2d08a278c",
+            findFooterData(SECTION_4_ID, footerData)
+          )?.url !== "#" && (
+            <Link
+              href={
+                findFooterSectionData(
+                  "69254195399388b2d08a278c",
+                  findFooterData(SECTION_4_ID, footerData)
+                )?.url ?? "#"
+              }
+            >
+              <Youtube color={theme == "dark" ? "white" : "black"} size={25} />
+            </Link>
+          )}
         </div>
       </div>
       <div className="w-full md:w-2/4 flex flex-col lg:justify-center lg:items-center h-full lg:py-10 order-1 md:order-2">
