@@ -265,7 +265,83 @@ const Footer = () => {
         <h1 className="text-black dark:text-[#B4BCD0] text-base lg:text-lg mb-3 lg:mb-5">
           {findFooterData(SECTION_3_ID, footerData)?.title}
         </h1>
-        {findFooterData(SECTION_3_ID, footerData)?.sections?.map((links) => (
+        {findFooterSectionData(
+          "6923ce1b0feecf49a84284bd",
+          findFooterData(SECTION_3_ID, footerData)
+        )?.url !== "#" && (
+          <Link
+            href={
+              findFooterSectionData(
+                "6923ce1b0feecf49a84284bd",
+                findFooterData(SECTION_3_ID, footerData)
+              )?.url ?? "#"
+            }
+            className="cursor-pointer mb-2 text-sm lg:text-base"
+          >
+            {findFooterSectionData(
+              "6923ce1b0feecf49a84284bd",
+              findFooterData(SECTION_3_ID, footerData)
+            )?.title ?? "#"}
+          </Link>
+        )}
+        {findFooterSectionData(
+          "6923ce1b0feecf49a84284bf",
+          findFooterData(SECTION_3_ID, footerData)
+        )?.url !== "#" && (
+          <Link
+            href={
+              findFooterSectionData(
+                "6923ce1b0feecf49a84284bf",
+                findFooterData(SECTION_3_ID, footerData)
+              )?.url ?? "#"
+            }
+            className="cursor-pointer mb-2 text-sm lg:text-base"
+          >
+            {findFooterSectionData(
+              "6923ce1b0feecf49a84284bf",
+              findFooterData(SECTION_3_ID, footerData)
+            )?.title ?? "#"}
+          </Link>
+        )}
+        {findFooterSectionData(
+          "6923ce1b0feecf49a84284be",
+          findFooterData(SECTION_3_ID, footerData)
+        )?.url !== "#" && (
+          <Link
+            href={
+              findFooterSectionData(
+                "6923ce1b0feecf49a84284be",
+                findFooterData(SECTION_3_ID, footerData)
+              )?.url ?? "#"
+            }
+            className="cursor-pointer mb-2 text-sm lg:text-base"
+          >
+            {findFooterSectionData(
+              "6923ce1b0feecf49a84284be",
+              findFooterData(SECTION_3_ID, footerData)
+            )?.title ?? "#"}
+          </Link>
+        )}
+        {findFooterSectionData(
+          "6923ce1b0feecf49a84284c0",
+          findFooterData(SECTION_3_ID, footerData)
+        )?.url !== "#" && (
+          <Link
+            href={
+              findFooterSectionData(
+                "6923ce1b0feecf49a84284c0",
+                findFooterData(SECTION_3_ID, footerData)
+              )?.url ?? "#"
+            }
+            className="cursor-pointer mb-2 text-sm lg:text-base"
+          >
+            {findFooterSectionData(
+              "6923ce1b0feecf49a84284c0",
+              findFooterData(SECTION_3_ID, footerData)
+            )?.title ?? "#"}
+          </Link>
+        )}
+        {/* {findFooterData(SECTION_3_ID, footerData)?.sections?.map((links) => (
           <Link
             key={links?._id}
             href={links?.url ?? "#"}
@@ -273,7 +349,7 @@ const Footer = () => {
           >
             {links.title}
           </Link>
-        ))}
+        ))} */}
       </div>
     </footer>
   );
