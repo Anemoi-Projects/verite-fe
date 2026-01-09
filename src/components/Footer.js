@@ -20,6 +20,7 @@ import {
   ArrowRight,
   Bird,
   Github,
+  Mail,
   Slack,
   Twitter,
   Youtube,
@@ -27,6 +28,7 @@ import {
 import { useTheme } from "next-themes";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MailDialog from "./MailDialog";
 
 const findFooterData = (sectionID, pageData) => {
   const data = pageData?.find((footer) => footer?._id === sectionID);
@@ -50,6 +52,7 @@ const formSchema = z.object({
 
 const Footer = () => {
   const [footerData, setFooterData] = useState([]);
+  const [subscribed, setSubscribed] = useState(false);
   const { theme } = useTheme();
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -80,7 +83,24 @@ const Footer = () => {
   }, []);
 
   function onSubmit(values) {
-    console.log(values);
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: `${process.env.apiURL}/api/v1/mail/subscribe/submit`,
+      data: values,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        if(response.data.isSubscribed){
+        setSubscribed(true);
+        form.reset();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   return (
@@ -351,6 +371,7 @@ const Footer = () => {
           </Link>
         ))} */}
       </div>
+      <MailDialog subscribed={subscribed} setSubscribed={setSubscribed} />
     </footer>
   );
 };
