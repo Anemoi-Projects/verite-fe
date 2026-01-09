@@ -82,17 +82,23 @@ const Footer = () => {
     getHeaderData();
   }, []);
 
-  function onSubmit(values) {
+  const onSubmit = (values) => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `${process.env.apiURL}/api/v1/mail/subscribe/submit`,
-      data: values,
+      url: `${process.env.apiURL}/api/v1/mail/subscribe/add`,
+      headers: {
+          "Content-Type": "application/json",
+        },
+      data: {
+        emailID: values.emailID,
+      },
     };
 
     axios
       .request(config)
       .then((response) => {
+        console.log(response.data.data);
         if(response.data.isSubscribed){
         setSubscribed(true);
         form.reset();
