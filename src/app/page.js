@@ -140,7 +140,7 @@ export default function Home() {
               <p className="text-base md:text-lg mb-3" key={`story-${index}`}>
                 {item?.heading}
               </p>
-            )
+            ),
           )}
         </div>
       </section>
@@ -164,13 +164,13 @@ export default function Home() {
                         findSectionData(SECTION_4_ID, pageData)?.subsections
                           .length -
                           1 && "border-b"
-                    }`
+                    }`,
                   )}
                 >
                   <h5 className="text-xl md:text-2xl mb-2">{item?.heading}</h5>
                   <p className="text-sm md:text-base">{item?.subHeading}</p>
                 </div>
-              )
+              ),
             )}
           </div>
           <div className="w-full md:w-[55%] relative aspect-square lg:aspect-auto lg:h-[600px]">
@@ -219,7 +219,7 @@ export default function Home() {
               src={
                 findSubSectionData(
                   "6916f5479afb323bcd890713",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.subSectionMedia
               }
               alt="XRP"
@@ -231,7 +231,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f5479afb323bcd890713",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.heading
               }
             </h1>
@@ -239,7 +239,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f5479afb323bcd890713",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.subHeading
               }
             </p>
@@ -247,7 +247,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f5479afb323bcd890713",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.description
               }
             </p>
@@ -255,8 +255,8 @@ export default function Home() {
               href={
                 findSubSectionData(
                   "6916f5479afb323bcd890713",
-                  findSectionData(SECTION_6_ID, pageData)
-                )?.ctaButton ?? "#"
+                  findSectionData(SECTION_6_ID, pageData),
+                )?.ctaLink ?? "#"
               }
             >
               <Button className={"flex gap-x-3 items-center theme-button"}>
@@ -264,7 +264,7 @@ export default function Home() {
                   {
                     findSubSectionData(
                       "6916f5479afb323bcd890713",
-                      findSectionData(SECTION_6_ID, pageData)
+                      findSectionData(SECTION_6_ID, pageData),
                     )?.ctaButton
                   }
                 </span>
@@ -279,7 +279,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f5679afb323bcd890715",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.heading
               }
             </h1>
@@ -287,7 +287,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f5679afb323bcd890715",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.subHeading
               }
             </p>
@@ -295,7 +295,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f5679afb323bcd890715",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.description
               }
             </p>
@@ -303,7 +303,7 @@ export default function Home() {
               href={
                 findSubSectionData(
                   "6916f5679afb323bcd890715",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.ctaLink
               }
             >
@@ -312,7 +312,7 @@ export default function Home() {
                   {
                     findSubSectionData(
                       "6916f5679afb323bcd890715",
-                      findSectionData(SECTION_6_ID, pageData)
+                      findSectionData(SECTION_6_ID, pageData),
                     )?.ctaButton
                   }
                 </span>
@@ -325,7 +325,7 @@ export default function Home() {
               src={
                 findSubSectionData(
                   "6916f5679afb323bcd890715",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.subSectionMedia
               }
               alt="XRP"
@@ -339,7 +339,7 @@ export default function Home() {
               src={
                 findSubSectionData(
                   "6916f98580a03e86002f7f0e",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.subSectionMedia
               }
               alt="XRP"
@@ -351,7 +351,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f98580a03e86002f7f0e",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.heading
               }
             </h1>
@@ -359,7 +359,7 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f98580a03e86002f7f0e",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.subHeading
               }
             </p>
@@ -367,15 +367,16 @@ export default function Home() {
               {
                 findSubSectionData(
                   "6916f98580a03e86002f7f0e",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.description
               }
             </p>
+
             <Link
               href={
                 findSubSectionData(
                   "6916f98580a03e86002f7f0e",
-                  findSectionData(SECTION_6_ID, pageData)
+                  findSectionData(SECTION_6_ID, pageData),
                 )?.ctaLink ?? "#"
               }
             >
@@ -384,7 +385,7 @@ export default function Home() {
                   {
                     findSubSectionData(
                       "6916f98580a03e86002f7f0e",
-                      findSectionData(SECTION_6_ID, pageData)
+                      findSectionData(SECTION_6_ID, pageData),
                     )?.ctaButton
                   }
                 </span>
@@ -441,7 +442,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            )
+            ),
           )}
         </div>
       </section>

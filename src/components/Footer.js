@@ -36,7 +36,7 @@ const findFooterData = (sectionID, pageData) => {
 };
 const findFooterSectionData = (sectionID, sectionData) => {
   const footerSection = sectionData?.sections?.find(
-    (sub) => sub?._id === sectionID
+    (sub) => sub?._id === sectionID,
   );
   return footerSection;
 };
@@ -88,8 +88,8 @@ const Footer = () => {
       maxBodyLength: Infinity,
       url: `${process.env.apiURL}/api/v1/mail/subscribe/add`,
       headers: {
-          "Content-Type": "application/json",
-        },
+        "Content-Type": "application/json",
+      },
       data: {
         emailID: values.emailID,
       },
@@ -99,15 +99,15 @@ const Footer = () => {
       .request(config)
       .then((response) => {
         console.log(response.data.data);
-        if(response.data.isSubscribed){
-        setSubscribed(true);
-        form.reset();
+        if (response.data.isSubscribed) {
+          setSubscribed(true);
+          form.reset();
         }
       })
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   return (
     <footer className="px-10 py-20 flex flex-wrap md:flex-nowrap gap-10 justify-between items-start">
@@ -117,26 +117,26 @@ const Footer = () => {
         </h1>
         {findFooterSectionData(
           "6922ba293e0ef90cc830a6d6",
-          findFooterData(SECTION_1_ID, footerData)
+          findFooterData(SECTION_1_ID, footerData),
         )?.title !== "NA" && (
           <p className="text-sm lg:text-base mb-3 lg:mb-5">
             {
               findFooterSectionData(
                 "6922ba293e0ef90cc830a6d6",
-                findFooterData(SECTION_1_ID, footerData)
+                findFooterData(SECTION_1_ID, footerData),
               )?.title
             }
           </p>
         )}
         {findFooterSectionData(
           "6922ba293e0ef90cc830a6d7",
-          findFooterData(SECTION_1_ID, footerData)
+          findFooterData(SECTION_1_ID, footerData),
         )?.title !== "NA" && (
           <Link
             href={
               findFooterSectionData(
                 "6922ba293e0ef90cc830a6d7",
-                findFooterData(SECTION_1_ID, footerData)
+                findFooterData(SECTION_1_ID, footerData),
               )?.url ?? "#"
             }
             className="underline cursor-pointer mb-1 text-sm lg:text-base"
@@ -144,20 +144,20 @@ const Footer = () => {
             {
               findFooterSectionData(
                 "6922ba293e0ef90cc830a6d7",
-                findFooterData(SECTION_1_ID, footerData)
+                findFooterData(SECTION_1_ID, footerData),
               )?.title
             }
           </Link>
         )}
         {findFooterSectionData(
           "6922ba293e0ef90cc830a6d8",
-          findFooterData(SECTION_1_ID, footerData)
+          findFooterData(SECTION_1_ID, footerData),
         )?.title !== "NA" && (
           <Link
             href={
               findFooterSectionData(
                 "6922ba293e0ef90cc830a6d8",
-                findFooterData(SECTION_1_ID, footerData)
+                findFooterData(SECTION_1_ID, footerData),
               )?.url ?? "#"
             }
             className="underline cursor-pointer mb-1 text-sm lg:text-base"
@@ -165,20 +165,20 @@ const Footer = () => {
             {
               findFooterSectionData(
                 "6922ba293e0ef90cc830a6d8",
-                findFooterData(SECTION_1_ID, footerData)
+                findFooterData(SECTION_1_ID, footerData),
               )?.title
             }
           </Link>
         )}
         {findFooterSectionData(
           "6922ba293e0ef90cc830a6d9",
-          findFooterData(SECTION_1_ID, footerData)
+          findFooterData(SECTION_1_ID, footerData),
         )?.title !== "NA" && (
           <p className="text-sm lg:text-base ">
             {
               findFooterSectionData(
                 "6922ba293e0ef90cc830a6d9",
-                findFooterData(SECTION_1_ID, footerData)
+                findFooterData(SECTION_1_ID, footerData),
               )?.title
             }
           </p>
@@ -187,13 +187,13 @@ const Footer = () => {
         <div className="flex items-center gap-x-5 mt-5">
           {findFooterSectionData(
             "69254195399388b2d08a2789",
-            findFooterData(SECTION_4_ID, footerData)
+            findFooterData(SECTION_4_ID, footerData),
           )?.url !== "#" && (
             <Link
               href={
                 findFooterSectionData(
                   "69254195399388b2d08a2789",
-                  findFooterData(SECTION_4_ID, footerData)
+                  findFooterData(SECTION_4_ID, footerData),
                 )?.url ?? "#"
               }
             >
@@ -202,13 +202,13 @@ const Footer = () => {
           )}
           {findFooterSectionData(
             "69254195399388b2d08a278a",
-            findFooterData(SECTION_4_ID, footerData)
+            findFooterData(SECTION_4_ID, footerData),
           )?.url !== "#" && (
             <Link
               href={
                 findFooterSectionData(
                   "69254195399388b2d08a278a",
-                  findFooterData(SECTION_4_ID, footerData)
+                  findFooterData(SECTION_4_ID, footerData),
                 )?.url ?? "#"
               }
             >
@@ -217,13 +217,13 @@ const Footer = () => {
           )}
           {findFooterSectionData(
             "69254195399388b2d08a278b",
-            findFooterData(SECTION_4_ID, footerData)
+            findFooterData(SECTION_4_ID, footerData),
           )?.url !== "#" && (
             <Link
               href={
                 findFooterSectionData(
                   "69254195399388b2d08a278b",
-                  findFooterData(SECTION_4_ID, footerData)
+                  findFooterData(SECTION_4_ID, footerData),
                 )?.url ?? "#"
               }
             >
@@ -232,13 +232,13 @@ const Footer = () => {
           )}
           {findFooterSectionData(
             "69254195399388b2d08a278c",
-            findFooterData(SECTION_4_ID, footerData)
+            findFooterData(SECTION_4_ID, footerData),
           )?.url !== "#" && (
             <Link
               href={
                 findFooterSectionData(
                   "69254195399388b2d08a278c",
-                  findFooterData(SECTION_4_ID, footerData)
+                  findFooterData(SECTION_4_ID, footerData),
                 )?.url ?? "#"
               }
             >
@@ -259,31 +259,34 @@ const Footer = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input
-                      placeholder="Enter Email Here !!"
-                      {...field}
-                      type={"email"}
-                      className={"px-5 py-3 h-auto"}
-                    />
+                    <div className="relative flex items-center">
+                      <Input
+                        placeholder="Enter Email Here !!"
+                        {...field}
+                        type={"email"}
+                        className={"px-5 py-3 h-auto pr-[135px]"}
+                      />
+                      <Button
+                        variant="sm"
+                        type="submit"
+                        className={
+                          "theme-button lg:mx-auto inline-flex items-center absolute right-1 text-xs"
+                        }
+                      >
+                        <span>
+                          {findFooterSectionData(
+                            "6923ccc60feecf49a84284b7",
+                            findFooterData(SECTION_2_ID, footerData),
+                          )?.title ?? "#"}
+                        </span>
+                        <ArrowRight size={20} />
+                      </Button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <div className="flex  justify-start lg:justify-center">
-              <Button
-                type="submit"
-                className={"theme-button lg:mx-auto inline-flex items-center"}
-              >
-                <span>
-                  {findFooterSectionData(
-                    "6923ccc60feecf49a84284b7",
-                    findFooterData(SECTION_2_ID, footerData)
-                  )?.title ?? "#"}
-                </span>
-                <ArrowRight size={20} />
-              </Button>
-            </div>
           </form>
         </Form>
       </div>
@@ -293,77 +296,77 @@ const Footer = () => {
         </h1>
         {findFooterSectionData(
           "6923ce1b0feecf49a84284bd",
-          findFooterData(SECTION_3_ID, footerData)
+          findFooterData(SECTION_3_ID, footerData),
         )?.url !== "#" && (
           <Link
             href={
               findFooterSectionData(
                 "6923ce1b0feecf49a84284bd",
-                findFooterData(SECTION_3_ID, footerData)
+                findFooterData(SECTION_3_ID, footerData),
               )?.url ?? "#"
             }
             className="cursor-pointer mb-2 text-sm lg:text-base"
           >
             {findFooterSectionData(
               "6923ce1b0feecf49a84284bd",
-              findFooterData(SECTION_3_ID, footerData)
+              findFooterData(SECTION_3_ID, footerData),
             )?.title ?? "#"}
           </Link>
         )}
         {findFooterSectionData(
           "6923ce1b0feecf49a84284bf",
-          findFooterData(SECTION_3_ID, footerData)
+          findFooterData(SECTION_3_ID, footerData),
         )?.url !== "#" && (
           <Link
             href={
               findFooterSectionData(
                 "6923ce1b0feecf49a84284bf",
-                findFooterData(SECTION_3_ID, footerData)
+                findFooterData(SECTION_3_ID, footerData),
               )?.url ?? "#"
             }
             className="cursor-pointer mb-2 text-sm lg:text-base"
           >
             {findFooterSectionData(
               "6923ce1b0feecf49a84284bf",
-              findFooterData(SECTION_3_ID, footerData)
+              findFooterData(SECTION_3_ID, footerData),
             )?.title ?? "#"}
           </Link>
         )}
         {findFooterSectionData(
           "6923ce1b0feecf49a84284be",
-          findFooterData(SECTION_3_ID, footerData)
+          findFooterData(SECTION_3_ID, footerData),
         )?.url !== "#" && (
           <Link
             href={
               findFooterSectionData(
                 "6923ce1b0feecf49a84284be",
-                findFooterData(SECTION_3_ID, footerData)
+                findFooterData(SECTION_3_ID, footerData),
               )?.url ?? "#"
             }
             className="cursor-pointer mb-2 text-sm lg:text-base"
           >
             {findFooterSectionData(
               "6923ce1b0feecf49a84284be",
-              findFooterData(SECTION_3_ID, footerData)
+              findFooterData(SECTION_3_ID, footerData),
             )?.title ?? "#"}
           </Link>
         )}
         {findFooterSectionData(
           "6923ce1b0feecf49a84284c0",
-          findFooterData(SECTION_3_ID, footerData)
+          findFooterData(SECTION_3_ID, footerData),
         )?.url !== "#" && (
           <Link
             href={
               findFooterSectionData(
                 "6923ce1b0feecf49a84284c0",
-                findFooterData(SECTION_3_ID, footerData)
+                findFooterData(SECTION_3_ID, footerData),
               )?.url ?? "#"
             }
             className="cursor-pointer mb-2 text-sm lg:text-base"
           >
             {findFooterSectionData(
               "6923ce1b0feecf49a84284c0",
-              findFooterData(SECTION_3_ID, footerData)
+              findFooterData(SECTION_3_ID, footerData),
             )?.title ?? "#"}
           </Link>
         )}
